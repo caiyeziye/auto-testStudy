@@ -1,0 +1,26 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from time import sleep
+
+driver = webdriver.Chrome()
+driver.get('http://localhost:63342/autoTest/testA.html?_ijt=6vk4n80rdd12fblmj9ch63f824&_ij_reload=RELOAD_ON_SAVE')
+#(1)
+# driver.find_element(By.CSS_SELECTOR, '.username').send_keys('admin')
+# driver.find_element(By.CSS_SELECTOR, '.password').send_keys('123456')
+# sleep(1)
+# driver.find_element(By.CSS_SELECTOR, '#loginBtn').click()
+# sleep(1)
+#(2)
+# sleep(1)
+# driver.find_element(By.CSS_SELECTOR,'.form-item > #username').send_keys('admin')
+# driver.find_element(By.CSS_SELECTOR,'.form-item .password').send_keys('123456')
+# sleep(1)
+# driver.find_element(By.CSS_SELECTOR,'#loginForm #loginBtn').click()
+# sleep(1)
+sleep(1)
+driver.find_element(By.CSS_SELECTOR,'[id*="username"]').send_keys('admin')
+driver.find_element(By.CSS_SELECTOR,'[id*="password"]').send_keys('123456')
+sleep(1)
+driver.find_element(By.CSS_SELECTOR,'[id*="Btn"]').click()
+sleep(1)
+driver.quit()
